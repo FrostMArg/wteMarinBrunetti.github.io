@@ -9,7 +9,6 @@ import Grid from '@material-ui/core/Grid';
 import FolderIcon from '@material-ui/icons/Folder';
 import { makeStyles, Typography } from '@material-ui/core';
 import { itemListContainerStyle } from './ItemListContainerStyle';
-import { ItemCount } from '../ItemCount/ItemCount.js';
 const useStyles = makeStyles((theme) => itemListContainerStyle(theme));
 
 // Generate = Genera la cantidad de elementros a mostrar en el componente
@@ -25,7 +24,6 @@ export const ItemListContainer = props => {
     const { titulo, subtitulo, precio } = props;
     const classes = useStyles();
     const [dense, setDense] = React.useState(false);
-
     return (<>
         <div>
             <Grid container spacing={2}>
@@ -36,7 +34,6 @@ export const ItemListContainer = props => {
                                 <ListItem>
                                     <ListItemAvatar>
                                         <Avatar>
-                                            {/* Aca tiene que ir la miniatura del producto */}
                                             <FolderIcon />
                                         </Avatar>
                                     </ListItemAvatar>
@@ -44,18 +41,15 @@ export const ItemListContainer = props => {
                                         primary={titulo + " " + subtitulo}
                                         secondary={precio}
                                     />
-
                                     <ListItemSecondaryAction>
-                                        <ItemCount cantidad={5} init={1} />
-                                    </ListItemSecondaryAction>
 
+                                    </ListItemSecondaryAction>
                                 </ListItem>
                             )}
                         </List>
                     </div>
                 </Grid>
-            </Grid>
-        </div>
+            </Grid></div>
     </>
     );
 }
