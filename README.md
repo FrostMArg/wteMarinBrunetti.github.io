@@ -1,3 +1,13 @@
+Ultimos cambios
+# Miercoles 09-06-21 - ItemCount - Desafio Componentes 2 - Contador con boton
+
+# Martes 08-06-21 - ItemListContainer - Desafio Componentes 1 - Estilos y home
+
+
+
+
+
+# Data del proyecto original de react create app 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
