@@ -3,8 +3,10 @@ import { makeStyles } from '@material-ui/core';
 import { stylesItems } from './ItemCountStyle';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
+
 const useStyles = makeStyles((theme) => stylesItems(theme));
 
 export const ItemCount = (props) => {
@@ -36,10 +38,12 @@ export const ItemCount = (props) => {
     };
 
     return <section className={styles.container}>
+        <Typography variant="body2" color="textSecondary" component="p">
+            {count === cantidad && <label ClassName={styles.centrado}>No hay stock suficiente!</label>}
+        </Typography>
         <div className={styles.inputGroup}>
             <label>Cnt:</label>
             <span>{count}</span>
-            {count === cantidad && <label>No hay stock suficiente!</label>}
             <div className={styles.inputGroup} onClick={e => sumarItem()} aria-label="sumar">
                 <IconButton >
                     <AddCircleOutlineIcon />
@@ -55,6 +59,7 @@ export const ItemCount = (props) => {
                     <AddShoppingCartIcon />
                 </IconButton>
             </div>
+
         </div>
     </section >
 

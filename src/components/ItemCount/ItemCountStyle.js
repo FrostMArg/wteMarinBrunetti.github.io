@@ -6,9 +6,8 @@ export const stylesItems = (theme) => {
             rowGap: '1rem',
             backgroundColor: theme.palette.background.paper,
             borderRadius: 15,
-            border: '1px solid gray',
-            padding: "1%",
-            margin: "2%"
+            padding: "0.5%",
+            margin: "1%"
         },
         inputGroup: {
             display: 'flex',
@@ -19,8 +18,12 @@ export const stylesItems = (theme) => {
             textAlign: 'center',
             border: 'transparent',
             '& > span': {
-                width: '4.4rem',
+                width: '1rem',
             }
-        }
+        },
+        centrado: {
+            textAlign: "center",
+            justifyContent: 'center',
+        },
     });
 };
