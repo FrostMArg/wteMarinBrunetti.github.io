@@ -1,4 +1,5 @@
 # Ultimos cambios
+- Domingo 13-06-21 - ItemList + Item - Catálogo con MAPS y Promises
 - Miercoles 09-06-21 - ItemCount - Desafio Componentes 2 - Contador con boton
 - Martes 08-06-21 - ItemListContainer - Desafio Componentes 1 - Estilos y home
 
