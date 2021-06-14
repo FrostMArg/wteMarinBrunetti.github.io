@@ -143,7 +143,7 @@ const myPromise = () => {
 };
 
 export const ItemList = () => {
-    const classes = useStyle();
+    const styles = useStyle();
     const [data, setData] = useState([]);
 
     const ejecutarItemList = () => {
@@ -155,7 +155,7 @@ export const ItemList = () => {
 
     return <>
         {
-            data.length === 0 ? (<div className={classes.root}><LinearProgress /></div>) : (
+            data.length === 0 ? (<div className={styles.root}><LinearProgress /></div>) : (
                 <Grid container>
                     <Grid item xs={12} >
                         <Grid container justify="center" >

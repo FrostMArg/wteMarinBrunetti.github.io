@@ -13,10 +13,10 @@ import { ItemCount } from '../ItemCount/ItemCount.js';
 const useStyles = makeStyles((theme) => ItemStyle(theme));
 export const Item = props => {
     const { id, title, description, price, pictureUrl, alt, stock, descShort } = props;
-    const classes = useStyles();
+    const styles = useStyles();
 
     return (<>
-        <Card className={classes.root} key={id}>
+        <Card className={styles.root} key={id}>
             <CardHeader
                 action={
                     <IconButton aria-label="settings">

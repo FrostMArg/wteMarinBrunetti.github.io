@@ -13,17 +13,17 @@ const navLinks = [
 const useStyles = makeStyles((theme) => navBarStyle(theme));
 
 export const NavBar = () => {
-    const classes = useStyles();
+    const styles = useStyles();
     return (<>
         <AppBar position="static">
             <Toolbar>
-                <Container maxWidth="md" className={classes.navbarDisplayFlex}>
+                <Container maxWidth="md" className={styles.navbarDisplayFlex}>
                     <IconButton edge="start" color="inherit" aria-label="home">
                         <img src={logo} alt="LogoWizardTechStore"></img>
                     </IconButton>
-                    <List component="nav" aria-labelledby="main navigation" className={classes.navDisplayFlex}>
+                    <List component="nav" aria-labelledby="main navigation" className={styles.navDisplayFlex}>
                         {navLinks.map(({ title, path }) => (
-                            <a href={path} key={title} className={classes.linkText}>
+                            <a href={path} key={title} className={styles.linkText}>
                                 <ListItem button>
                                     <ListItemText primary={title} />
                                 </ListItem>
