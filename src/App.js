@@ -1,6 +1,6 @@
 import './App.css';
 import { NavBar } from './components/Navbar/NavBar.js';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { ItemListContainer } from './screens/ItemListContainer/ItemListContainer';
 function App() {
   return <>
     <NavBar />

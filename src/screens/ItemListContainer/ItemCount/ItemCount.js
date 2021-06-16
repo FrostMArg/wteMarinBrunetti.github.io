@@ -39,7 +39,7 @@ export const ItemCount = (props) => {
 
     return <section className={styles.container}>
         <Typography variant="body2" color="textSecondary" component="p">
-            {count === cantidad && <label ClassName={styles.centrado}>No hay stock suficiente!</label>}
+            {count === cantidad && <label className={styles.centrado}>No hay stock suficiente!</label>}
         </Typography>
         <div className={styles.inputGroup}>
             <label>Cnt:</label>

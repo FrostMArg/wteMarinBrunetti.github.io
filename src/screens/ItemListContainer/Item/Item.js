@@ -8,13 +8,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { ItemStyle } from './ItemStyles.js';
-import { ItemCount } from '../ItemCount/ItemCount.js';
+import { ItemCount } from '../ItemCount/ItemCount.js'
 
 const useStyles = makeStyles((theme) => ItemStyle(theme));
-export const Item = props => {
-    const { id, title, description, price, pictureUrl, alt, stock, descShort } = props;
+export const Item = (dataProd, i) => {
     const styles = useStyles();
-
+    const { id, title, description, price, pictureUrl, alt, stock, descShort } = dataProd.productos;
     return (<>
         <Card className={styles.root} key={id}>
             <CardHeader
@@ -41,5 +40,4 @@ export const Item = props => {
         </Card>
     </>
     );
-
 }
