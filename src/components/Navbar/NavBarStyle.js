@@ -15,10 +15,17 @@ export const navBarStyle = theme => {
             color: `white`
         },
         root: {
+            flexGrow: 1,
             "&:hover": {
                 background: "#efefef"
             }
-        }
+        },
+        menuButton: {
+            marginRight: theme.spacing(2),
+        },
+        title: {
+            flexGrow: 1,
+        },
     })
 
 

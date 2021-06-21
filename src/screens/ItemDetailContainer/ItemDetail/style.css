@@ -1,5 +1,5 @@
 .MuiContainer-root.product-view {
-    height: 80vh;
+    max-height: 80vh;
     display: flex;
     align-items: center;
     margin-top: 3%;

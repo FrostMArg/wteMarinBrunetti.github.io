@@ -1,34 +1,28 @@
 import React from "react";
-import { AppBar, Toolbar, IconButton, List, ListItem, ListItemText, Container } from "@material-ui/core";
+import { AppBar, Toolbar, IconButton, List, Container } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import logo from '../../images/logoHorizontalBlanco.png';
+import logo from '../../Images/logoHorizontalBlanco.png';
 import { navBarStyle } from './NavBarStyle';
-import { CardWidget } from '../../components/CartWidget/CartWidget'
-const navLinks = [
-    { title: `Tienda`, path: `/` },
-    { title: `Contacto`, path: `/` },
-    { title: `Otro`, path: `/` }
-];
-// Uso los styles del archivo js
+import { CardWidget } from '../CartWidget/CartWidget';
+import { NavBarItems } from './NavBarItems/NavBarItems.js';
+import { Link } from 'react-router-dom';
+import { Mouse, Headset } from '@material-ui/icons';
+const categorias = [{ title: `Heaset`, icon: <Headset /> },
+{ title: `Mouse`, icon: <Mouse /> }];
 const useStyles = makeStyles((theme) => navBarStyle(theme));
-
 export const NavBar = () => {
     const styles = useStyles();
     return (<>
-        <AppBar position="static">
+        <AppBar position="dinamic">
             <Toolbar>
                 <Container maxWidth="md" className={styles.navbarDisplayFlex}>
-                    <IconButton edge="start" color="inherit" aria-label="home">
-                        <img src={logo} alt="LogoWizardTechStore"></img>
-                    </IconButton>
+                    <Link to='/'>
+                        <IconButton edge="start" color="inherit" aria-label="home">
+                            <img src={logo} alt="LogoWizardTechStore"></img>
+                        </IconButton>
+                    </Link>
                     <List component="nav" aria-labelledby="main navigation" className={styles.navDisplayFlex}>
-                        {navLinks.map(({ title, path }) => (
-                            <a href={path} key={title} className={styles.linkText}>
-                                <ListItem button>
-                                    <ListItemText primary={title} />
-                                </ListItem>
-                            </a>
-                        ))}
+                        <NavBarItems />
                     </List>
                     <CardWidget> </CardWidget>
                 </Container>

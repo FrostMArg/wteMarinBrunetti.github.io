@@ -4,7 +4,8 @@ export const itemListStyles = theme => {
             width: '100%',
             '& > * + *': {
                 marginTop: theme.spacing(2),
-            },
-        }
+            }
+        },
+        link: { textDecoration: 'none' }
     })
 }

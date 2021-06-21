@@ -1,21 +1,13 @@
 import './App.css';
-import { NavBar } from './components/Navbar/NavBar.js';
-
-
-import { ItemListContainer } from './screens/ItemListContainer/ItemListContainer';
-
-import { ItemDetailContainer } from './screens/ItemDetailContainer/ItemDetailContainer.js'
-
-
+import { NavBar } from './Components/Navbar/NavBar.js';
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from './Router/Router.js';
 
 function App() {
-  return <>
+  return <BrowserRouter>
     <NavBar />
-    <h2> El desafio de la clase 6 comienza aqui debajo</h2>
-    <ItemListContainer />
-    <h2> El desafio de la clase 7 comienza aqui debajo</h2>
-    <ItemDetailContainer />
-  </>
+    <Router />
+  </BrowserRouter>
 }
 
 export default App;
