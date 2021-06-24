@@ -5,6 +5,7 @@ export const CartProvider = (props) => {
     useEffect(() => {
         if (localStorage.getItem('Cart') !== null) {
             setCart(JSON.parse(localStorage.getItem('Cart')));
+            console.log('Items del carrito', JSON.parse(localStorage.getItem('Cart')));
         }
     }, []);
     useEffect(() => { localStorage.setItem('Cart', JSON.stringify(cart)); }, [cart]);
