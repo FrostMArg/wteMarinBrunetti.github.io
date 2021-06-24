@@ -3,6 +3,7 @@ import { Grid, Container, Typography } from "@material-ui/core";
 import "./style.css";
 import CircularIndeterminate from '../../../Components/Loader/Loader.js';
 import { ItemCount } from './ItemCount/ItemCount.js';
+
 export const ItemDetail = ({ status, producto }) => {
     return (<>
         {status === 'Pending' ? (<CircularIndeterminate />) : (
@@ -21,7 +22,7 @@ export const ItemDetail = ({ status, producto }) => {
                                     <Typography className="quantity" variant="h8">
                                         Cantidad: {producto.stock}
                                     </Typography>
-                                    <ItemCount cantidad={producto.stock} init={1} />
+                                    <ItemCount producto={producto} />
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -33,4 +34,8 @@ export const ItemDetail = ({ status, producto }) => {
     </>
     );
 };
+
+
+
+
 

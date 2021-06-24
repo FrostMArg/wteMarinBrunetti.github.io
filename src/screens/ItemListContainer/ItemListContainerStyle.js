@@ -12,11 +12,6 @@ export const itemListContainerStyle = theme => {
             shadowOpacity: 0.34,
             shadowRadius: 6.27,
             elevation: 15,
-            padding: "1%",
-            margin: "2%"
-        },
-        title: {
-            margin: theme.spacing(4, 0, 2),
         }
     })
 }

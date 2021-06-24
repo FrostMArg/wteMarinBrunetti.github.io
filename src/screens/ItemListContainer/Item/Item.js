@@ -10,25 +10,13 @@ import { ItemStyle } from './ItemStyles.js';
 const useStyles = makeStyles((theme) => ItemStyle(theme));
 export const Item = (dataProd, i) => {
     const styles = useStyles();
-    const { id, title, description, price, pictureUrl, alt, stock, descShort } = dataProd.productos;
-    return (<>
-        <Card className={styles.root} key={id}>
-            <CardHeader
-                title={title}
-                subheader={"$ " + price}
-            />
-            <CardMedia
-                component='img'
-                image={pictureUrl}
-                width="150"
-                title={alt}
-            />
-            <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p" >
-                    {descShort}
-                </Typography>
-            </CardContent>
-        </Card>
-    </>
+    const { id, title, price, pictureUrl, alt, descShort } = dataProd.productos;
+    return (<Card className={styles.root} key={id}>
+        <CardHeader title={title} subheader={"$ " + price} />
+        <CardMedia component='img' image={pictureUrl} width="150" title={alt} />
+        <CardContent>
+            <Typography variant="body2" color="textSecondary" component="p" > {descShort} </Typography>
+        </CardContent>
+    </Card>
     );
 }

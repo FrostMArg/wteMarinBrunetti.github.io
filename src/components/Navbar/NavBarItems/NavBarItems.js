@@ -5,23 +5,17 @@ import { ItemsMenu } from '../../../Services/DataRutas.js';
 
 const Boton = props => {
     const history = useHistory();
-    return <> <ListItem button onClick={() => history.push(`/category/${props.id}`)} >
+    return <ListItem button onClick={() => history.push(`/category/${props.id}`)} >
         <ListItemText primary={props.id} />
         <IconButton color="inherit"
             arial-label="close">{props.icon}</IconButton>
     </ListItem>
-    </>
 }
 
 const BotonesMenu = props => {
-    return <>{
-        props.ItemsMenu.map((detalleBoton, i) => {
-            return <>
-                <Boton key={i} {...detalleBoton} />
-            </>
-        })
-    }
-    </>
+    return props.ItemsMenu.map((detalleBoton, i) => {
+        return <Boton key={i} {...detalleBoton} />
+    });
 }
 
 export const NavBarItems = props => {

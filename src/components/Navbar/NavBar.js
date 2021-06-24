@@ -47,7 +47,7 @@ export const NavBar = () => {
                     ) : (<> <List component="nav" aria-labelledby="main navigation" className={styles.navDisplayFlex}>
                         <NavBarItems />
                     </List>
-                        <CardWidget />
+                        <CardWidget color="inherit" />
                     </>
                     )}
                 </Container>

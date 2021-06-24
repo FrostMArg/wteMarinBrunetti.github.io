@@ -7,20 +7,16 @@ export const ItemDetailContainer = ({ producto }) => {
     const productoID = useParams();
     useEffect(() => {
         const emulateFetch = () => {
-            let findItems = new Promise((resolve, reject) => {
+            const findItems = new Promise((resolve, reject) => {
                 setTimeout(() => { producto ? resolve(producto) : reject('No se encontraron productos'); }, 2000);
             });
             findItems.then((res) => {
-                let filtered = res.filter((producto, i) => producto.id.toString() === productoID.id);
+                const filtered = res.filter((producto, i) => producto.id.toString() === productoID.id);
                 setProductoDetalle(filtered[0]);
                 setPromStatus('Success');
             }).catch((err) => { setPromStatus('Failed: ' + err); });
         };
         emulateFetch();
     }, [productoID, productoDetalle, producto]);
-
-    return (<ItemDetail status={promStatus} producto={productoDetalle} />
-    );
+    return (<ItemDetail status={promStatus} producto={productoDetalle} />);
 };
-
-

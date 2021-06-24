@@ -1,26 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core';
 import { stylesItems } from './ItemCountStyle';
+
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
-
+import { Link } from 'react-router-dom';
+import { CartContext } from '../../../../Context/Context.js';
 const useStyles = makeStyles((theme) => stylesItems(theme));
 
-export const ItemCount = (props) => {
+export const ItemCount = ({ producto }) => {
+    const context = useContext(CartContext);
+    const { id, stock, title } = producto;
     const styles = useStyles();
-    const { cantidad, init } = props;
-    const [count, setCount] = useState(init);
+    // eslint-disable-next-line
     const [buttonToggle, setButtonToggle] = useState(false);
-
-    const palCarrito = (e) => {
-        if (count > 0 && count <= cantidad) {
-            console.log(`El usuario selecciono ${count} ìtems`);
-        }
-    };
-
+    const [count, setCount] = useState(0);
     const restarItem = () => {
         if (count !== 0) {
             setCount(count - 1);
@@ -31,15 +28,17 @@ export const ItemCount = (props) => {
     };
 
     const sumarItem = () => {
-        if (count !== cantidad) {
+        if (count !== stock) {
             setCount(count + 1);
             setButtonToggle(false);
+        } else {
+            console.log('Cantidad superior al stock actual');
         }
     };
 
-    return <section className={styles.container}>
+    return (<section className={styles.container}>
         <Typography variant="body2" color="textSecondary" component="p">
-            {count === cantidad && <label className={styles.centrado}>No hay stock suficiente!</label>}
+            {count === stock && <label className={styles.centrado}>No hay stock suficiente!</label>}
         </Typography>
         <div className={styles.inputGroup}>
             <label>Cnt:</label>
@@ -50,17 +49,20 @@ export const ItemCount = (props) => {
                 </IconButton>
             </div>
             <div className={styles.inputGroup} onClick={e => restarItem()} aria-label="restar">
-                <IconButton >
+                <IconButton  >
                     <RemoveCircleOutlineIcon />
                 </IconButton>
             </div>
-            <div className={styles.inputGroup} disabled={buttonToggle} onClick={e => count === 0 ? undefined : palCarrito()}>
-                <IconButton>
-                    <AddShoppingCartIcon />
-                </IconButton>
+            <div className={styles.inputGroup}>
+                <Link
+                    to="/cart"
+                    onClick={() => context.addItem(id, title, count)}
+                > Agregar producto
+                    <IconButton >
+                        <AddShoppingCartIcon />
+                    </IconButton>
+                </Link>
             </div>
-
         </div>
-    </section >
-
+    </section >)
 }

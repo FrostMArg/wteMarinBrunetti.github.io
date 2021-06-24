@@ -27,7 +27,6 @@ export const ItemListContainer = ({ productosObjeto }) => {
                     (productos) => productos.categoria === tipoPeriferico.id
                 );
             } else {
-                // Si no encuentro el id de la categoria, muestro todo lo que trae RES
                 productosFiltrados = res;
             }
             setProductos(productosFiltrados);
