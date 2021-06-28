@@ -25,5 +25,20 @@ export const stylesItems = (theme) => {
             textAlign: "center",
             justifyContent: 'center',
         },
+        buttons: {
+            textDecoration: 'none',
+            borderRadius: 4,
+            border: '1px solid gray',
+            shadowColor: "#000",
+            padding: '6px 8px',
+            textTransform: 'uppercase',
+            textAlign: 'center',
+            margin: '2.5px',
+            fontSize: '0.875rem',
+        },
+        linkText: {
+            textDecoration: 'none',
+            textTransform: 'uppercase'
+        }
     });
 };

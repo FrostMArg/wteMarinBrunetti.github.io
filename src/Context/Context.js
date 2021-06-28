@@ -11,7 +11,7 @@ export const CartProvider = (props) => {
     useEffect(() => { localStorage.setItem('Cart', JSON.stringify(cart)); }, [cart]);
     const addItem = (id, item, quantity) => {
         console.log(id, item, quantity);
-        if (quantity !== 0) {
+        if (quantity !== 0 || quantity !== undefined) {
             if (cart.filter((element) => element.id === id).length === 0) {
                 setCart([...cart, { id: id, item: item, quantity: quantity }]);
             }

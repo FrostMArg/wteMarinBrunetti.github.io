@@ -1,68 +1,50 @@
-import React, { useState, useContext } from 'react';
-import { makeStyles } from '@material-ui/core';
+import React, { useState } from 'react';
+import { makeStyles, Button } from '@material-ui/core';
 import { stylesItems } from './ItemCountStyle';
-
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
-import { Link } from 'react-router-dom';
-import { CartContext } from '../../../../Context/Context.js';
+import { ItemTerminarCompra } from '../ItemTerminarCompra/ItemTerminarCompra.js';
 const useStyles = makeStyles((theme) => stylesItems(theme));
 
-export const ItemCount = ({ producto }) => {
-    const context = useContext(CartContext);
-    const { id, stock, title } = producto;
+export const ItemCount = ({ producto, init, cantidadProducto, onAdd, click, clickCancelar }) => {
+    const [count, setCount] = useState(init > cantidadProducto ? init : cantidadProducto);
     const styles = useStyles();
-    // eslint-disable-next-line
-    const [buttonToggle, setButtonToggle] = useState(false);
-    const [count, setCount] = useState(0);
-    const restarItem = () => {
-        if (count !== 0) {
-            setCount(count - 1);
-            if (count === 1) {
-                setButtonToggle(true);
-            }
-        }
-    };
+
+    const restarItem = () => { if (count !== 0) { setCount(count - 1); } };
 
     const sumarItem = () => {
-        if (count !== stock) {
+        if (count !== producto.stock) {
             setCount(count + 1);
-            setButtonToggle(false);
         } else {
             console.log('Cantidad superior al stock actual');
         }
     };
 
-    return (<section className={styles.container}>
-        <Typography variant="body2" color="textSecondary" component="p">
-            {count === stock && <label className={styles.centrado}>No hay stock suficiente!</label>}
-        </Typography>
-        <div className={styles.inputGroup}>
-            <label>Cnt:</label>
-            <span>{count}</span>
-            <div className={styles.inputGroup} onClick={e => sumarItem()} aria-label="sumar">
-                <IconButton >
-                    <AddCircleOutlineIcon />
-                </IconButton>
-            </div>
-            <div className={styles.inputGroup} onClick={e => restarItem()} aria-label="restar">
-                <IconButton  >
-                    <RemoveCircleOutlineIcon />
-                </IconButton>
-            </div>
-            <div className={styles.inputGroup}>
-                <Link
-                    to="/cart"
-                    onClick={() => context.addItem(id, title, count)}
-                > Agregar producto
-                    <IconButton >
-                        <AddShoppingCartIcon />
+    return <>
+        {click ? <ItemTerminarCompra clickCancelar={clickCancelar} producto={producto} count={count} />
+            :
+            <section className={styles.container}>
+                <div className={styles.inputGroup}>
+                    <Typography variant="h4">{count}</Typography>
+                    <IconButton onClick={e => sumarItem()} disabled={count < producto.stock ? false : true}>
+                        <AddCircleOutlineIcon />
                     </IconButton>
-                </Link>
-            </div>
-        </div>
-    </section >)
+                    <IconButton onClick={e => restarItem()} disabled={count === init ? true : false}>
+                        <RemoveCircleOutlineIcon />
+                    </IconButton>
+                    <Button className={styles.buttons} startIcon={<AddShoppingCartIcon />} onClick={() => onAdd(count)} disabled={producto.stock === 0 ? true : false}>
+                        Agregar al carrito
+                    </Button>
+                </div>
+            </section >
+        }
+    </>
+
+
 }
+
+
+
