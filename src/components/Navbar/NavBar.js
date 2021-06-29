@@ -1,8 +1,5 @@
-import React from "react";
-import {
-    AppBar, Toolbar, IconButton, List, Container, useMediaQuery,
-    Typography, Menu, MenuItem
-} from "@material-ui/core";
+import React, { useState } from "react";
+import { AppBar, Toolbar, IconButton, List, Container, useMediaQuery, Menu, MenuItem } from "@material-ui/core";
 import HomeIcon from '@material-ui/icons/Home';
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import logo from '../../Images/logoHorizontalBlanco.png';
@@ -11,17 +8,27 @@ import { CardWidget } from '../CartWidget/CartWidget';
 import { NavBarItems } from './NavBarItems/NavBarItems.js';
 import { Link } from 'react-router-dom';
 import MenuIcon from "@material-ui/icons/Menu";
+import { useHistory } from 'react-router-dom';
+
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => navBarStyle(theme));
 export const NavBar = () => {
     const styles = useStyles();
     const theme = useTheme();
+    const history = useHistory();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-    const [anchor, setAnchor] = React.useState(null);
-    const open = Boolean(anchor);
-    const handleMenu = (e) => {
-        setAnchor(e.currentTarget);
+    const [anchorEl, setAnchorEl] = useState();
+    const open = Boolean(anchorEl);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
     };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
     return (<>
         <AppBar position="static">
             <Toolbar>
@@ -32,16 +39,23 @@ export const NavBar = () => {
                         </IconButton>
                     </Link>
                     {isMobile ? (<>
-                        <IconButton color="inherit" className={styles.menuButton} edge="start" aria-label="menu" onClick={handleMenu}>
+                        <IconButton color="inherit" className={styles.menuButton} edge="start" aria-label="menu" aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
                             <MenuIcon />
                         </IconButton>
-                        <Menu id="menu-appbar" anchorEl={anchor} anchorOrigin={{ vertical: "top", horizontal: "right" }}
-                            KeepMounted transformOrigin={{ vertical: "top", horizontal: "right" }} open={open} >
-                            <MenuItem onClick={() => setAnchor(null)} component={Link} to="/" >
-                                <Typography variant="h7">Home<IconButton><HomeIcon /></IconButton></Typography>
+                        <Menu id="fade-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
+                            <MenuItem onClick={handleClose}>
+                                <Button color="inherit" startIcon={<HomeIcon />} onClick={() => history.push(`/`)}>
+                                    Home
+                                </Button>
                             </MenuItem>
-                            <NavBarItems />
-                            <MenuItem onClick={() => setAnchor(null)} component={Link} to="/Cart">Carrito<CardWidget /></MenuItem>
+                            <MenuItem onClick={handleClose}>
+                                <NavBarItems />
+                            </MenuItem>
+                            <MenuItem onClick={handleClose}>
+                                <Button color="inherit" startIcon={<CardWidget color="inherit" />} onClick={() => history.push(`/Cart`)}>
+                                    Carrito
+                                </Button>
+                            </MenuItem>
                         </Menu>
                     </>
                     ) : (<> <List component="nav" aria-labelledby="main navigation" className={styles.navDisplayFlex}>
@@ -56,3 +70,4 @@ export const NavBar = () => {
     </>
     );
 };
+

@@ -7,6 +7,9 @@ export const cartWidgetStyle = theme => {
             textDecoration: `none`,
             textTransform: `uppercase`,
             color: `white`,
+            '@media (max-width: 700px) ': {
+                color: 'black',
+            }
         },
         primary: {
             main: '#36454B',

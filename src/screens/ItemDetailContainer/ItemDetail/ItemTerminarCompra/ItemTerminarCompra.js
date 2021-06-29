@@ -8,6 +8,7 @@ const useStyle = makeStyles((theme) => TerminarCompraStyles(theme));
 export const ItemTerminarCompra = props => {
     const context = useContext(CartContext);
     const { id, title } = props.producto;
+    console.log(id);
     const count = props.count;
     const classes = useStyle();
     const { clickCancelar } = props;
@@ -20,6 +21,9 @@ export const ItemTerminarCompra = props => {
             </Button>
             <Button className={classes.buttons} onClick={() => clickCancelar(false)}>
                 Cancelar
+            </Button>
+            <Button className={classes.buttons} onClick={() => context.isInCart(id)}>
+                Validar
             </Button>
         </div>
     </div >
