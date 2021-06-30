@@ -3,35 +3,36 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import { ItemList } from './ItemList/ItemList.js';
+
+import { dataBase } from '../../Firebase/firebase.js';
+
 export const ItemListContainer = ({ productosObjeto }) => {
     const [promStatus, setPromStatus] = useState('Pending');
     const [productos, setProductos] = useState([]);
     const tipoPeriferico = useParams();
+
     useEffect(() => {
-        const promesaProductos = () => {
-            let findItems = new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    productosObjeto.length ? resolve(productosObjeto) : reject('No se encontraron productos');
-                }, 1000);
+        setPromStatus('Pending');
+        let query;
+
+        if (tipoPeriferico.id) {
+            query = dataBase.collection('productos').where('categoria ', '==', tipoPeriferico.id);
+        } else { query = dataBase.collection('productos'); }
+
+        query.get().then((querySnapshot) => {
+            let productosFiltrados = querySnapshot.docs.map((productos) => {
+                console.log(querySnapshot.docs);
+                console.log(productos)
+                return {
+                    ...productos.data(),
+                    id: productos.id,
+                };
             });
-            findItems.then((res) => {
-                filterByCategory(res);
-                setPromStatus('Success');
-            }).catch((err) => { setPromStatus('Failed: ' + err); });
-        };
-        promesaProductos();
-        const filterByCategory = (res) => {
-            let productosFiltrados;
-            if (tipoPeriferico.id) {
-                productosFiltrados = res.filter(
-                    (productos) => productos.categoria === tipoPeriferico.id
-                );
-            } else {
-                productosFiltrados = res;
-            }
             setProductos(productosFiltrados);
-        };
-    }, [tipoPeriferico, productosObjeto]);
+            setPromStatus('Success');
+        });
+    }, [tipoPeriferico]);
+
     return <Grid container>
         <Grid item xs={12}>
             <Grid container justify="center" >
