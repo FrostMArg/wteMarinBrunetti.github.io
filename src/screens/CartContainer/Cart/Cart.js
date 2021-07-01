@@ -1,79 +1,32 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
+import { CartStyle } from './CartStyle.js';
+import { Button } from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
+import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import { makeStyles } from '@material-ui/core/styles';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import { Button } from '@material-ui/core';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
-import Divider from '@material-ui/core/Divider';
-const useStyles = makeStyles((theme) => ({
-    root: {
-        width: '100vw',
-        backgroundColor: theme.palette.background.paper,
-    },
-    muiAvatarRoot: {
-        width: 120,
-        height: 120
-    },
-    detalleItem: {
-        display: 'flex',
-        flexWrap: 'nowrap',
-        justifyContent: 'space-evenly',
-        flexDirection: 'column',
-    },
-    centrado: {
-        textAlign: 'center',
-        alignItems: 'center',
-        display: 'flex',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-    },
-    itemsContainer: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        height: "fit-content",
-        width: '80%',
-        borderRadius: 15,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 5,
-        },
-        shadowOpacity: 0.34,
-        shadowRadius: 6.27,
-        elevation: 15,
-        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
-    },
-    itemsLista: {
-        display: 'flex',
-        flexDirection: 'column',
-        flexFlow: 'column wrap',
-        width: '100%',
-    }
-}));
-
+const useStyles = makeStyles((theme) => CartStyle(theme));
 export const Cart = ({ context }) => {
     const classes = useStyles();
-
     const getQuantity = () => {
-        let amount = 0;
-        context.cart.map((item) => (amount = amount + item.quantity));
-        return amount;
+        let cantidadTotal = 0;
+        context.cart.map((item) => (cantidadTotal = cantidadTotal + item.quantity));
+        return cantidadTotal;
     };
-
     const getTotal = () => {
-        let total = 0;
-        context.cart.map((item) => (total = total + item.producto.price * item.quantity));
-        return total;
+        let precioTotal = 0;
+        context.cart.map((item) => (precioTotal = precioTotal + item.producto.price * item.quantity));
+        return precioTotal;
     };
     return (<div className={classes.itemsContainer}>
         <List dense className={classes.itemsLista}>
-            <span className={classes.centrado}>Nro. Pedido: #123ASD</span>
+            <span className={classes.centrado}>Nro. Pedido: #0000001</span>
             <Divider />
             {context.cart.map((item) => {
                 return (<>
@@ -101,6 +54,5 @@ export const Cart = ({ context }) => {
             </List>
         </List>
     </div>
-
     );
 }

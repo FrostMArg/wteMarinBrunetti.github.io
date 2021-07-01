@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import { ItemCount } from './ItemCount/ItemCount.js';
+import { makeStyles } from '@material-ui/core/styles';
+import { ItemDetailStyle } from './ItemDetailStyle.js';
+import CardContent from '@material-ui/core/CardContent';
 import { Grid, Container, Typography } from "@material-ui/core";
 import CircularIndeterminate from '../../../Components/Loader/Loader.js';
-import { ItemCount } from './ItemCount/ItemCount.js';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-
-import { ItemDetailStyle } from './ItemDetailStyle.js';
-import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ItemDetailStyle(theme));
-
 export const ItemDetail = ({ status, producto }) => {
     const classes = useStyles();
     const [click, setClick] = useState(false);
@@ -18,11 +16,9 @@ export const ItemDetail = ({ status, producto }) => {
         setCantidadProducto(count);
         setClick(true);
     };
-
     const clickCancelar = e => {
         setClick(false);
     };
-
     return (<>
         {status === false ? (<CircularIndeterminate />) : (
             producto && (<Container className={classes.gridContainer} >

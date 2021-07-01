@@ -1,3 +1,5 @@
+// No deberia usarlos mas, dado que tengo las imagenes en la DB de firebase
+
 import LogitechGProXSuperLight from '../Images/productos/LogitechGProXWirelessMouse.png';
 import steelSeriesRival3Mouse from '../Images/productos/steelSeriesRival3Mouse.png';
 import LogitechGProXHeadsetWireless from '../Images/productos/LogitechGProXHeadsetWireless.png';

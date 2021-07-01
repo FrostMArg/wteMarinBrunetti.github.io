@@ -44,8 +44,7 @@ export const ItemDetailStyle = theme => {
             '@media (max-width: 768px) ': {
                 fontSize: '1.4em'
             }
-        }
-        , parrafo: {
+        }, parrafo: {
             fontSize: '14px',
             fontWeight: 300
         }, quantity: {

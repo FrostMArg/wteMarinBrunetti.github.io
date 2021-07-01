@@ -5,14 +5,13 @@ export const ItemStyle = (theme) => {
             Height: 450,
             margin: '20px',
             boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
-
         },
         '& > p': {
             fontSize: "0.5rem"
         },
         media: {
             maxWidth: '100%',
-            paddingTop: '56.25%', // 16:9
+            paddingTop: '56.25%',
         },
         price: {
             color: "grey",
