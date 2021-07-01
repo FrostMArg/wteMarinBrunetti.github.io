@@ -1,5 +1,7 @@
 # Ultimos cambios
-- Jueves 24-06-21 - Count - Card - Content 
+- Jueves 01-07-21 - Cart & Firebase
+- Lunes 28-06-21 - Context
+- Jueves 24-06-21 - Count - Cart - Content 
 - Lunes 21-06-21 - Router - Categorias - ItemDetail con id de item
 - Miercoles 16-06-21 - DetailContainer & ItemDetail
 - Miercoles 16-06-21 - modularizando ando, cambios de path, component item 
