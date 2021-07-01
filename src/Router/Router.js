@@ -16,7 +16,6 @@ export const Router = () => {
             <Route path="/category/:id">
                 <ItemListContainer productosObjeto={dataProd} />
             </Route>
-
             <Route path="/item/:id">
                 <ItemDetailContainer producto={dataProd} />
             </Route>

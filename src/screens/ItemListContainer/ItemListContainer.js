@@ -12,24 +12,22 @@ export const ItemListContainer = ({ productosObjeto }) => {
     const tipoPeriferico = useParams();
 
     useEffect(() => {
-        setPromStatus('Pending');
+        setPromStatus(false);
         let query;
-
         if (tipoPeriferico.id) {
-            query = dataBase.collection('productos').where('categoria ', '==', tipoPeriferico.id);
-        } else { query = dataBase.collection('productos'); }
-
+            query = dataBase.collection('productos').where('categoria', '==', tipoPeriferico.id);
+        } else {
+            query = dataBase.collection('productos');
+        }
         query.get().then((querySnapshot) => {
             let productosFiltrados = querySnapshot.docs.map((productos) => {
-                console.log(querySnapshot.docs);
-                console.log(productos)
                 return {
                     ...productos.data(),
                     id: productos.id,
                 };
             });
             setProductos(productosFiltrados);
-            setPromStatus('Success');
+            setPromStatus(true);
         });
     }, [tipoPeriferico]);
 

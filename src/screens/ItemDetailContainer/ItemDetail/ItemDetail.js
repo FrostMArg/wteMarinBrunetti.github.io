@@ -24,7 +24,7 @@ export const ItemDetail = ({ status, producto }) => {
     };
 
     return (<>
-        {status === 'Pending' ? (<CircularIndeterminate />) : (
+        {status === false ? (<CircularIndeterminate />) : (
             producto && (<Container className={classes.gridContainer} >
                 <Grid className={classes.root} container item xs={12} direction="row" justify="center" alignItems="center" spacing={2}>
                     <Card className={classes.cardRoot}>

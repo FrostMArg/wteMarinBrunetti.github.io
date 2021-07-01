@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { ItemDetail } from './ItemDetail/ItemDetail.js';
 import { useParams } from 'react-router-dom';
+
+import { dataBase } from '../../Firebase/firebase.js';
+
 export const ItemDetailContainer = ({ producto }) => {
-    const [promStatus, setPromStatus] = useState('Pending');
+    const [promStatus, setPromStatus] = useState(false);
     const [productoDetalle, setProductoDetalle] = useState([]);
     const productoID = useParams();
+
+
     useEffect(() => {
-        const emulateFetch = () => {
-            const findItems = new Promise((resolve, reject) => {
-                setTimeout(() => { producto ? resolve(producto) : reject('No se encontraron productos'); }, 2000);
-            });
-            findItems.then((res) => {
-                const filtered = res.filter((producto, i) => producto.id.toString() === productoID.id);
-                setProductoDetalle(filtered[0]);
-                setPromStatus('Success');
-            }).catch((err) => { setPromStatus('Failed: ' + err); });
-        };
-        emulateFetch();
-    }, [productoID, productoDetalle, producto]);
+        const productosDb = dataBase.collection('productos');
+        const producto = productosDb.doc(productoID.id);
+        producto.get()
+            .then((doc) => {
+                if (!doc.exists) {
+                    setProductoDetalle(404);
+                    console.log('No existe');
+                    return;
+                }
+                setProductoDetalle({ ...doc.data(), id: doc.id });
+            })
+            .catch((error) => console.log('Error: ' + error))
+            .finally(() => setPromStatus(true));
+    }, [productoID]);
+
     return (<ItemDetail status={promStatus} producto={productoDetalle} />);
 };
