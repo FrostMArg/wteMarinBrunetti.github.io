@@ -7,8 +7,7 @@ import { Button } from '@material-ui/core';
 const useStyle = makeStyles((theme) => TerminarCompraStyles(theme));
 export const ItemTerminarCompra = props => {
     const context = useContext(CartContext);
-    const { id, title } = props.producto;
-    console.log(id);
+    const { id } = props.producto;
     const count = props.count;
     const classes = useStyle();
     const { clickCancelar } = props;
@@ -16,7 +15,7 @@ export const ItemTerminarCompra = props => {
     return <div className={classes.generalContainer}>
         <div className={classes.container}>
             <Button className={classes.buttons} onClick={() => clickCancelar(false)}>
-                <Link to="/cart" onClick={() => context.addItem(id, title, count)} className={classes.linkText}> Terminar compra
+                <Link to="/cart" onClick={() => context.addItem(props.producto, count)} className={classes.linkText}> Terminar compra
                 </Link>
             </Button>
             <Button className={classes.buttons} onClick={() => clickCancelar(false)}>

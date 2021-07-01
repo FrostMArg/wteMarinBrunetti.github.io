@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { CartContext } from '../../Context/Context.js';
+import { Cart } from './Cart/Cart.js';
 
-const styles = {
-    textAlign: 'center'
-}
-export const Cart = () => {
-    return <>
-        <h2 style={styles}>Página en construcción</h2>
-    </>
-}
+const useStyles = makeStyles((theme) => ({
+    margin: {
+        display: 'flex',
+        justifyContent: 'center',
+    }
+}));
+export const CartContainer = () => {
+    const classes = useStyles();
+    const context = useContext(CartContext);
+
+    return (<>
+        <section className={classes.margin}>
+            <Cart context={context} />
+        </section>
+    </>);
+};

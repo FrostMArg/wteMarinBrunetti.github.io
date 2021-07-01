@@ -9,20 +9,21 @@ export const CartProvider = (props) => {
         }
     }, []);
     useEffect(() => { localStorage.setItem('Cart', JSON.stringify(cart)); }, [cart]);
-    const addItem = (id, item, quantity) => {
+    const addItem = (producto, quantity) => {
         if (quantity !== 0 || quantity !== undefined) {
-            if (cart.filter((element) => element.id === id).length === 0) {
-                setCart([...cart, { id: id, item: item, quantity: quantity }]);
+            if (cart.filter((element) => element.id === producto.id).length === 0) {
+                setCart([...cart, { producto: producto, quantity: quantity }]);
             }
         }
     };
     const removeItem = (id) => {
-        const quitoItem = cart.filter((element) => element.id !== id);
+        console.log(id);
+        const quitoItem = cart.filter((element) => element.producto.id !== id);
         setCart(quitoItem);
     };
     const isInCart = (id) => {
-        if (cart.filter((element) => element.id === id)) {
-            setResp(true);
+        if (cart.filter((element) => element.producto.id === id)) {
+            setResp("Ya se encuentra en el carrito: " + true);
             console.log(resp);
         } else {
             setResp(false);
