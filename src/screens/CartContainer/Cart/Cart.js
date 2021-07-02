@@ -28,9 +28,9 @@ export const Cart = ({ context }) => {
         <List dense className={classes.itemsLista}>
             <span className={classes.centrado}>Nro. Pedido: #0000001</span>
             <Divider />
-            {context.cart.map((item) => {
+            {context.cart.map((item, i) => {
                 return (<>
-                    <List component="nav" aria-label="main mailbox folders" className={classes.detalleItem}>
+                    <List key={i} component="nav" aria-label="main mailbox folders" className={classes.detalleItem}>
                         <ListItem key={item.producto.id} button >
                             <ListItemAvatar>
                                 <Avatar className={classes.muiAvatarRoot} alt={item.producto.alt} src={item.producto.pictureUrl}

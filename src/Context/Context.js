@@ -17,7 +17,6 @@ export const CartProvider = (props) => {
         }
     };
     const removeItem = (id) => {
-        console.log(id);
         const quitoItem = cart.filter((element) => element.producto.id !== id);
         setCart(quitoItem);
     };
