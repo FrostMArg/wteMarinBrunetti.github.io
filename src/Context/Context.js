@@ -23,10 +23,8 @@ export const CartProvider = (props) => {
     const isInCart = (id) => {
         if (cart.filter((element) => element.producto.id === id)) {
             setResp("Ya se encuentra en el carrito: " + true);
-            console.log(resp);
         } else {
             setResp(false);
-            console.log(resp);
         }
     }
     const clearAll = () => setCart([]);

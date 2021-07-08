@@ -1,4 +1,5 @@
 # Ultimos cambios
+- Jueves 08-07-21 - Formulario compra & Firebase - Insert Pedido - Update Stock
 - Jueves 01-07-21 - Cart & Firebase
 - Lunes 28-06-21 - Context
 - Jueves 24-06-21 - Count - Cart - Content 

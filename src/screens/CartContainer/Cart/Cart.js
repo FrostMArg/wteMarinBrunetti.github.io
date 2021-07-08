@@ -12,39 +12,26 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 const useStyles = makeStyles((theme) => CartStyle(theme));
-export const Cart = ({ context }) => {
+export const Cart = ({ context, getTotal, getQuantity }) => {
     const classes = useStyles();
-    const getQuantity = () => {
-        let cantidadTotal = 0;
-        context.cart.map((item) => (cantidadTotal = cantidadTotal + item.quantity));
-        return cantidadTotal;
-    };
-    const getTotal = () => {
-        let precioTotal = 0;
-        context.cart.map((item) => (precioTotal = precioTotal + item.producto.price * item.quantity));
-        return precioTotal;
-    };
     return (<div className={classes.itemsContainer}>
         <List dense className={classes.itemsLista}>
-            <span className={classes.centrado}>Nro. Pedido: #0000001</span>
+            <span className={classes.centrado}>Productos a comprar:</span>
             <Divider />
             {context.cart.map((item, i) => {
-                return (<>
-                    <List key={i} component="nav" aria-label="main mailbox folders" className={classes.detalleItem}>
-                        <ListItem key={item.producto.id} button >
-                            <ListItemAvatar>
-                                <Avatar className={classes.muiAvatarRoot} alt={item.producto.alt} src={item.producto.pictureUrl}
-                                />
-                            </ListItemAvatar>
-                            <ListItemText id={item.producto.id} primary={item.producto.title} secondary={'$ ' + item.producto.price + ' -  Cantidad: ' + item.quantity} />
-                            <ListItemSecondaryAction>
-                                <Button color="inherit" startIcon={<DeleteForeverIcon />} onClick={() => context.removeItem(item.producto.id)} />
-                            </ListItemSecondaryAction>
-                        </ListItem>
-                        <Divider />
-                    </List>
-                </>
-                );
+                return (<List key={i} component="nav" aria-label="main mailbox folders" className={classes.detalleItem}>
+                    <ListItem key={item.producto.id} button >
+                        <ListItemAvatar>
+                            <Avatar className={classes.muiAvatarRoot} alt={item.producto.alt} src={item.producto.pictureUrl}
+                            />
+                        </ListItemAvatar>
+                        <ListItemText id={item.producto.id} primary={item.producto.title} secondary={'$ ' + item.producto.price + ' -  Cantidad: ' + item.quantity} />
+                        <ListItemSecondaryAction>
+                            <Button color="inherit" startIcon={<DeleteForeverIcon />} onClick={() => context.removeItem(item.producto.id)} />
+                        </ListItemSecondaryAction>
+                    </ListItem>
+                    <Divider />
+                </List>);
             })}
             <List component="nav" aria-label="secondary mailbox folders">
                 <ListItem className={classes.centrado}>

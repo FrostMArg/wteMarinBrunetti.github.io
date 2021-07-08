@@ -3,6 +3,9 @@ export const CartContainerStyle = theme => {
         margin: {
             display: 'flex',
             justifyContent: 'center',
+            flexDirection: 'column',
+            alignContent: 'center',
+            alignItems: 'center'
         }
     });
 }

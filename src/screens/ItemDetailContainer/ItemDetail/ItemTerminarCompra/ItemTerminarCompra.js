@@ -20,9 +20,6 @@ export const ItemTerminarCompra = props => {
             <Button className={classes.buttons} onClick={() => clickCancelar(false)}>
                 Cancelar
             </Button>
-            {/* <Button className={classes.buttons} onClick={() => context.isInCart(id)}>
-                Validar
-            </Button> */}
         </div>
     </div >
 }

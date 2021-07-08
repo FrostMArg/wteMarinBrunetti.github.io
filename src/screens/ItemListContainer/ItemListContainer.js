@@ -24,7 +24,7 @@ export const ItemListContainer = () => {
     }, [tipoPeriferico]);
     return <Grid container>
         <Grid item xs={12}>
-            <Grid container justify="center" >
+            <Grid container justify="center">
                 <ItemList status={promStatus} productos={productos} />
             </Grid>
         </Grid>

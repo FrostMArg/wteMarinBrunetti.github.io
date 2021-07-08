@@ -24,6 +24,7 @@ export const CartStyle = theme => {
         itemsContainer: {
             display: "flex",
             flexDirection: "column",
+            paddingTop: '0.5em',
             alignItems: "center",
             height: "fit-content",
             width: '80%',
