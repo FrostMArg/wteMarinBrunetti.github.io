@@ -13,7 +13,7 @@ export const ItemTerminarCompra = props => {
     return <div className={classes.generalContainer}>
         <div className={classes.container}>
             <Button className={classes.buttons} onClick={() => clickCancelar(false)}>
-                <Link to="/cart" onClick={() => context.addItem(props.producto, count)} className={classes.linkText}> Terminar compra
+                <Link to="/wteMarinBrunetti.github.io/cart" onClick={() => context.addItem(props.producto, count)} className={classes.linkText}> Terminar compra
                 </Link>
             </Button>
             <Button className={classes.buttons} onClick={() => clickCancelar(false)}>
