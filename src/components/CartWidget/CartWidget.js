@@ -5,7 +5,7 @@ import { CartContext } from '../../Context/Context.js';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'; export const CardWidget = () => {
     const history = useHistory();
     const context = useContext(CartContext);
-    return (<Button color="inherit" startIcon={<ShoppingCartIcon color="inherit" />} onClick={() => history.push(`/Cart`)} >
+    return (<Button color="inherit" startIcon={<ShoppingCartIcon color="inherit" />} onClick={() => history.push(`/wteMarinBrunetti.github.io/cart`)} >
         {context.cart.length > 0 && (<span className="linkText"> {context.cart.length} </span>)}
     </Button>)
 }

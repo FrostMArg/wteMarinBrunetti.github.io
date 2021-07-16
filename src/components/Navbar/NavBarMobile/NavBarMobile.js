@@ -33,7 +33,7 @@ export const NavBarMobile = () => {
                 <NavBarItems />
             </MenuItem>
             <MenuItem onClick={handleClose}>
-                <Button className={styles.bkNone} color="inherit" onClick={() => history.push(`/Cart`)}>
+                <Button className={styles.bkNone} color="inherit" onClick={() => history.push(`/wteMarinBrunetti.github.io/cart`)}>
                     <CardWidget className={styles.bkNone} color="inherit" /> Carrito
                 </Button>
             </MenuItem>

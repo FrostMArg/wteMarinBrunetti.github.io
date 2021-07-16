@@ -11,13 +11,13 @@ export const Router = () => {
         <Route exact path="/wteMarinBrunetti.github.io/">
             <ItemListContainer />
         </Route>
-        <Route exact path="/cart">
+        <Route exact path="/wteMarinBrunetti.github.io/cart">
             <CartContainer />
         </Route>
-        <Route path="/category/:id">
+        <Route path="/wteMarinBrunetti.github.io/category/:id">
             <ItemListContainer />
         </Route>
-        <Route path="/item/:id">
+        <Route path="/wteMarinBrunetti.github.io/item/:id">
             <ItemDetailContainer />
         </Route>
     </Switch >)
