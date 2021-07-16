@@ -9,7 +9,7 @@ export const ItemList = ({ status, productos }) => {
     const styles = useStyle();
     return (<>
         {status === false ? (<CircularIndeterminate />) : (productos?.map((item) => (
-            <Link className={styles.link} to={`/item/${item.id}`} key={item.id}><Item productos={item} /></Link>
+            <Link className={styles.link} to={`/wteMarinBrunetti.github.io/item/${item.id}`} key={item.id}><Item productos={item} /></Link>
         )))}
     </>);
 };
