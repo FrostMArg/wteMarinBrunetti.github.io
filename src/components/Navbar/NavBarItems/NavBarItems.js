@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { ItemsMenu } from '../../../Services/DataRutas.js';
 const Boton = props => {
     const history = useHistory();
-    return <Button color="inherit" startIcon={props.icon} onClick={() => history.push(`/category/${props.id}`)}>
+    return <Button color="inherit" startIcon={props.icon} onClick={() => history.push(`/wteMarinBrunetti.github.io/category/${props.id}`)}>
         {props.id}
     </Button>
 }
