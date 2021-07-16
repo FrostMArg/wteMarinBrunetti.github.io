@@ -20,5 +20,5 @@ export const ItemTerminarCompra = props => {
                 Cancelar
             </Button>
         </div>
-    </div >
+    </div>
 }
