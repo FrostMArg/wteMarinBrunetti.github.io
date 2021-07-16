@@ -8,6 +8,9 @@ export const Router = () => {
         <Route exact path="/">
             <ItemListContainer />
         </Route>
+        <Route exact path="/wteMarinBrunetti.github.io/">
+            <ItemListContainer />
+        </Route>
         <Route exact path="/cart">
             <CartContainer />
         </Route>
