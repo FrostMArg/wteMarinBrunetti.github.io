@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/wteMarinBrunetti.github.io/static/css/main.a617e044.chunk.css",
-    "main.js": "/wteMarinBrunetti.github.io/static/js/main.7fd990b0.chunk.js",
-    "main.js.map": "/wteMarinBrunetti.github.io/static/js/main.7fd990b0.chunk.js.map",
+    "main.js": "/wteMarinBrunetti.github.io/static/js/main.af88d956.chunk.js",
+    "main.js.map": "/wteMarinBrunetti.github.io/static/js/main.af88d956.chunk.js.map",
     "runtime-main.js": "/wteMarinBrunetti.github.io/static/js/runtime-main.2c2daa2f.js",
     "runtime-main.js.map": "/wteMarinBrunetti.github.io/static/js/runtime-main.2c2daa2f.js.map",
     "static/js/2.84ad1e08.chunk.js": "/wteMarinBrunetti.github.io/static/js/2.84ad1e08.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.2c2daa2f.js",
     "static/js/2.84ad1e08.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.7fd990b0.chunk.js"
+    "static/js/main.af88d956.chunk.js"
   ]
 }
