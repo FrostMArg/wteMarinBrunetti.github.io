@@ -1,5 +1,5 @@
 {
-  "homepage": "http://FrostMArg.github.io/wteMarinBrunetti.github.io",
+  "homepage": "https://frostmarg.github.io/wteMarinBrunetti.github.io/",
   "name": "wte-marin-brunetti",
   "version": "0.1.0",
   "private": true,
@@ -45,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
