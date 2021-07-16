@@ -15,11 +15,9 @@ export const ItemCount = ({ producto, init, cantidadProducto, onAdd, click, clic
     const sumarItem = () => {
         if (count !== producto.stock) {
             setCount(count + 1);
-        } else {
-            console.log('Cantidad superior al stock actual');
         }
     };
-    return <>
+    return (<>
         {click ? <ItemTerminarCompra clickCancelar={clickCancelar} producto={producto} count={count} />
             :
             <section className={styles.container}>
@@ -37,7 +35,7 @@ export const ItemCount = ({ producto, init, cantidadProducto, onAdd, click, clic
                 </div>
             </section >
         }
-    </>
+    </>)
 }
 
 

@@ -1,5 +1,4 @@
-// No deberia usarlos mas, dado que tengo las imagenes en la DB de firebase
-
+// No se usan mas, dado que tengo las imagenes en la DB de firebase
 import LogitechGProXSuperLight from '../Images/productos/LogitechGProXWirelessMouse.png';
 import steelSeriesRival3Mouse from '../Images/productos/steelSeriesRival3Mouse.png';
 import LogitechGProXHeadsetWireless from '../Images/productos/LogitechGProXHeadsetWireless.png';
@@ -8,7 +7,6 @@ import SteelSeriesArctis9X from '../Images/productos/SteelSeriesArctis9X.png';
 import GloriousModelOMouse from '../Images/productos/GloriousModelOMouse.png';
 import RazerDeathAdderV2Mouse from '../Images/productos/RazerDeathAdderV2Mouse.png';
 import RazerBlackSharkV2Headset from '../Images/productos/RazerBlackSharkV2Headset.png';
-
 export const dataProd = [
     {
         id: 0,

@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 import List from '@material-ui/core/List';
 import { CartStyle } from './CartStyle.js';
 import { Button } from '@material-ui/core';
@@ -10,10 +11,27 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-
 const useStyles = makeStyles((theme) => CartStyle(theme));
 export const Cart = ({ context, getTotal, getQuantity }) => {
     const classes = useStyles();
+    const MensajeAvisoOpciones = (msjTitle, msjText, msjOk, item) => {
+        Swal.fire({
+            title: msjTitle,
+            text: msjText,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: 'gray',
+            cancelButtonText: 'Cancelar',
+            confirmButtonText: 'Eliminar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                context.removeItem(item.producto.id);
+                Swal.fire('Eliminado', msjOk, 'success');
+            }
+        });
+    };
+
     return (<div className={classes.itemsContainer}>
         <List dense className={classes.itemsLista}>
             <span className={classes.centrado}>Productos a comprar:</span>
@@ -27,7 +45,7 @@ export const Cart = ({ context, getTotal, getQuantity }) => {
                         </ListItemAvatar>
                         <ListItemText id={item.producto.id} primary={item.producto.title} secondary={'$ ' + item.producto.price + ' -  Cantidad: ' + item.quantity} />
                         <ListItemSecondaryAction>
-                            <Button color="inherit" startIcon={<DeleteForeverIcon />} onClick={() => context.removeItem(item.producto.id)} />
+                            <Button color="inherit" startIcon={<DeleteForeverIcon />} onClick={() => MensajeAvisoOpciones('Desea elimiar ' + item.producto.alt + ' del carrito?', 'Una vez eliminado debera agregarlo de nuevo manualmente', 'Producto eliminado correctamente', item)} />
                         </ListItemSecondaryAction>
                     </ListItem>
                     <Divider />

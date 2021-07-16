@@ -1,23 +1,23 @@
 export const navBarStyle = theme => {
     return ({
         navbarDisplayFlex: {
-            display: `flex`,
-            justifyContent: `space-between`
+            display: 'flex',
+            justifyContent: 'space-between'
         },
         navDisplayFlex: {
-            display: `flex`,
-            justifyContent: `space-between`,
-            alignItems: "center"
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center'
         },
         linkText: {
-            textDecoration: `none`,
-            textTransform: `uppercase`,
-            color: `white`
+            textDecoration: 'none',
+            textTransform: 'uppercase',
+            color: 'white'
         },
         root: {
             flexGrow: 1,
-            "&:hover": {
-                background: "#efefef"
+            '&:hover': {
+                background: '#efefef'
             }
         },
         menuButton: {
@@ -26,7 +26,10 @@ export const navBarStyle = theme => {
         title: {
             flexGrow: 1,
         },
+        bkNone: {
+            '&:hover': {
+                background: 'transparent'
+            }
+        }
     })
-
-
 }

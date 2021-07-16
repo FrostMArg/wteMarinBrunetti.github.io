@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Card from '@material-ui/core/Card';
+import Divider from '@material-ui/core/Divider';
 import CardMedia from '@material-ui/core/CardMedia';
 import { ItemCount } from './ItemCount/ItemCount.js';
 import { makeStyles } from '@material-ui/core/styles';
@@ -25,6 +26,7 @@ export const ItemDetail = ({ status, producto }) => {
                 <Grid className={classes.root} container item xs={12} direction="row" justify="center" alignItems="center" spacing={2}>
                     <Card className={classes.cardRoot}>
                         <CardMedia className={classes.cover} component='img' image={producto.pictureUrl} title={producto.title} />
+                        <Divider orientation="vertical" flexItem />
                         <div className={classes.details}>
                             <CardContent>
                                 <Typography variant="h2" className={classes.title}>{producto.title}</Typography>
@@ -43,13 +45,3 @@ export const ItemDetail = ({ status, producto }) => {
     </>
     );
 };
-
-
-
-
-
-
-
-
-
-

@@ -1,18 +1,11 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core';
-import { IconButton } from "@material-ui/core";
-import { cartWidgetStyle } from './CartWidgetStyle';
+import { useHistory } from 'react-router-dom';
+import { Button } from "@material-ui/core";
 import { CartContext } from '../../Context/Context.js';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-const useStyles = makeStyles((theme) => cartWidgetStyle(theme));
-export const CardWidget = () => {
-    const styles = useStyles();
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'; export const CardWidget = () => {
+    const history = useHistory();
     const context = useContext(CartContext);
-    return (<IconButton edge="start" color="inherit" aria-label="home">
-        <Link className={styles.linkText} to="/cart">
-            {context.cart.length > 0 && (<span className="linkText">{context.cart.length} </span>)}
-            <ShoppingCartIcon color="inherit" />
-        </Link>
-    </IconButton>)
+    return (<Button color="inherit" startIcon={<ShoppingCartIcon color="inherit" />} onClick={() => history.push(`/Cart`)} >
+        {context.cart.length > 0 && (<span className="linkText"> {context.cart.length} </span>)}
+    </Button>)
 }

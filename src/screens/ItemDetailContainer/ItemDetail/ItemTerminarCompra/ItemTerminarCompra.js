@@ -7,7 +7,6 @@ import { TerminarCompraStyles } from './ItemTerminarCompraStyles.js';
 const useStyle = makeStyles((theme) => TerminarCompraStyles(theme));
 export const ItemTerminarCompra = props => {
     const context = useContext(CartContext);
-    // const { id } = props.producto;
     const count = props.count;
     const classes = useStyle();
     const { clickCancelar } = props;
