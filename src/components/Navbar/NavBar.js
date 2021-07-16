@@ -23,7 +23,7 @@ export const NavBar = () => {
     return (<AppBar position="static">
         <Toolbar>
             <Container maxWidth="md" className={styles.navbarDisplayFlex}>
-                <Link to='/'>
+                <Link to='/wteMarinBrunetti.github.io/'>
                     <IconButton edge="start" color="inherit" aria-label="home">
                         <img src={logo} alt="LogoWizardTechStore"></img>
                     </IconButton>

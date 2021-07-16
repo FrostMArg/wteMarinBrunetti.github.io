@@ -25,7 +25,7 @@ export const NavBarMobile = () => {
         </IconButton>
         <Menu id="fade-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
             <MenuItem onClick={handleClose}>
-                <Button color="inherit" onClick={() => history.push(`/`)}>
+                <Button color="inherit" onClick={() => history.push(`/wteMarinBrunetti.github.io/`)}>
                     <HomeIcon /> Home
                 </Button>
             </MenuItem>
