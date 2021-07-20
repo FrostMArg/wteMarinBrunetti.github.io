@@ -10,7 +10,7 @@
 **Version Mobile**
 ![Demonstration mobile](./src/images/WTSMobile.gif)
 
-*Wuzard Tech Store* es una tienda de hardware ficticia, su finalidad es recrear un sitio web eccommerce en react. 
+*Wizard Tech Store* es una tienda de hardware ficticia, su finalidad es recrear un sitio web ecommerce en react. 
 
 Echo por: Adrian Matias Marin Brunetti - Proyecto final CoderHouse - Curso: React JS - Camada: 10250.
 
