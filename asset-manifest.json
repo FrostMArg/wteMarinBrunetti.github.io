@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/wteMarinBrunetti.github.io/static/css/main.a617e044.chunk.css",
-    "main.js": "/wteMarinBrunetti.github.io/static/js/main.2adcb55b.chunk.js",
-    "main.js.map": "/wteMarinBrunetti.github.io/static/js/main.2adcb55b.chunk.js.map",
-    "runtime-main.js": "/wteMarinBrunetti.github.io/static/js/runtime-main.2c2daa2f.js",
-    "runtime-main.js.map": "/wteMarinBrunetti.github.io/static/js/runtime-main.2c2daa2f.js.map",
-    "static/js/2.84ad1e08.chunk.js": "/wteMarinBrunetti.github.io/static/js/2.84ad1e08.chunk.js",
-    "static/js/2.84ad1e08.chunk.js.map": "/wteMarinBrunetti.github.io/static/js/2.84ad1e08.chunk.js.map",
-    "static/js/3.70789a14.chunk.js": "/wteMarinBrunetti.github.io/static/js/3.70789a14.chunk.js",
-    "static/js/3.70789a14.chunk.js.map": "/wteMarinBrunetti.github.io/static/js/3.70789a14.chunk.js.map",
+    "main.css": "/wteMarinBrunetti.github.io/static/css/main.5e124140.chunk.css",
+    "main.js": "/wteMarinBrunetti.github.io/static/js/main.f9b24ba3.chunk.js",
+    "main.js.map": "/wteMarinBrunetti.github.io/static/js/main.f9b24ba3.chunk.js.map",
+    "runtime-main.js": "/wteMarinBrunetti.github.io/static/js/runtime-main.784f8b4d.js",
+    "runtime-main.js.map": "/wteMarinBrunetti.github.io/static/js/runtime-main.784f8b4d.js.map",
+    "static/js/2.be51d3e3.chunk.js": "/wteMarinBrunetti.github.io/static/js/2.be51d3e3.chunk.js",
+    "static/js/2.be51d3e3.chunk.js.map": "/wteMarinBrunetti.github.io/static/js/2.be51d3e3.chunk.js.map",
+    "static/js/3.ad82a7df.chunk.js": "/wteMarinBrunetti.github.io/static/js/3.ad82a7df.chunk.js",
+    "static/js/3.ad82a7df.chunk.js.map": "/wteMarinBrunetti.github.io/static/js/3.ad82a7df.chunk.js.map",
     "index.html": "/wteMarinBrunetti.github.io/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/wteMarinBrunetti.github.io/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.84ad1e08.chunk.js.LICENSE.txt": "/wteMarinBrunetti.github.io/static/js/2.84ad1e08.chunk.js.LICENSE.txt"
+    "static/css/main.5e124140.chunk.css.map": "/wteMarinBrunetti.github.io/static/css/main.5e124140.chunk.css.map",
+    "static/js/2.be51d3e3.chunk.js.LICENSE.txt": "/wteMarinBrunetti.github.io/static/js/2.be51d3e3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2c2daa2f.js",
-    "static/js/2.84ad1e08.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.2adcb55b.chunk.js"
+    "static/js/runtime-main.784f8b4d.js",
+    "static/js/2.be51d3e3.chunk.js",
+    "static/css/main.5e124140.chunk.css",
+    "static/js/main.f9b24ba3.chunk.js"
   ]
 }
