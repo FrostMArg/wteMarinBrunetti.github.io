@@ -2,8 +2,9 @@
 
 **Deploy**: https://frostmarg.github.io/wteMarinBrunetti.github.io/
 
+**Version Desktop**
 ![Demonstration web](./src/images/WTSMobile.gif)
-
+**Version Mobile**
 ![Demonstration mobile](./src/images/WTSMobile.gif)
 
 *Wuzard Tech Store* es una tienda de hardware ficticia, su finalidad es recrear un sitio web eccommerce en react. 
@@ -24,9 +25,9 @@ Echo por: Adrian Matias Marin Brunetti - Proyecto final CoderHouse - Curso: Reac
 
 - **ReactJS**
 - **Create React App**
-- **Material UI** - Extremely useful for a clearer and more organised CSS setup
-- **React Router DOM** - Handy for handling the display of each section, and managing the navigation's route
-- **Firebase's Firestore** - This is where the stamps' data is stored, and where the app accesses it
+- **Material UI** 
+- **React Router DOM** 
+- **Firebase's Firestore**
 
 ### COMO LO PRUEBO?
 
