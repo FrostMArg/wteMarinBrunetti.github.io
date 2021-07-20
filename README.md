@@ -3,7 +3,10 @@
 **Deploy**: https://frostmarg.github.io/wteMarinBrunetti.github.io/
 
 **Version Desktop**
-![Demonstration web](./src/images/WTSMobile.gif)
+![Demonstration web](./src/images/WTSWeb.gif)
+
+
+
 **Version Mobile**
 ![Demonstration mobile](./src/images/WTSMobile.gif)
 
