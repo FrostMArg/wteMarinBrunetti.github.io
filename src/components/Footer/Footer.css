@@ -1,0 +1,28 @@
+.main-footer {
+  color: white;
+  background-color: #3f51b5;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.col-sm {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.pCentrado {
+  align-items: center;
+}
