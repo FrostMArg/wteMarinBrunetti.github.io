@@ -10,8 +10,8 @@ function App() {
     <CartProvider>
       <NavBar />
       <Router />
-      <Footer />
     </CartProvider>
+    <Footer />
   </BrowserRouter>
 }
 

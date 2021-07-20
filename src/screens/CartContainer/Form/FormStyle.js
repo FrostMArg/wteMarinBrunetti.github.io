@@ -1,6 +1,12 @@
 export const FormStyle = theme => {
     return ({
         root: {
+            display: 'flex',
+            alignContent: "center",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            flexDirection: "row",
+            alignItems: "center",
             '& > *': {
                 margin: theme.spacing(1),
                 width: '25ch',
@@ -10,6 +16,7 @@ export const FormStyle = theme => {
             marginTop: '2em',
             paddingTop: '0.5em',
             paddingBottom: '0.5em',
+            marginBottom: '2em',
             flexDirection: "column",
             alignItems: "center",
             height: "fit-content",
@@ -24,6 +31,12 @@ export const FormStyle = theme => {
             shadowRadius: 6.27,
             elevation: 15,
             boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)',
+            '@media (max-width: 425px) ': {
+                width: '100%',
+            }
+        }, makeStylesRoot: {
+            width: "90 %",
+            margin: "8px",
         }, buttons: {
             textDecoration: 'none',
             borderRadius: 4,

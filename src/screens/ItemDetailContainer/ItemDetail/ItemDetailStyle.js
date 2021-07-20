@@ -3,7 +3,7 @@ export const ItemDetailStyle = theme => {
         root: {
             display: 'flex',
             minHeight: '100%',
-            border: 'none'
+            border: 'none',
         },
         cardRoot: {
             display: 'flex',
@@ -15,14 +15,15 @@ export const ItemDetailStyle = theme => {
                 flexWrap: 'nowrap',
                 flexDirection: 'column',
                 alignItems: 'center',
+                padding: 0,
             }
         },
         gridContainer: {
             marginTop: '20px',
-            maxWidth: '80%',
-            '@media (max-width: 960px) ': {
-                maxWidth: '80%',
-            }
+            marginBottom: '2em',
+            '@media (max-width: 425px) ': {
+                width: '100%',
+            },
         },
         details: {
             display: 'flex',
@@ -31,7 +32,6 @@ export const ItemDetailStyle = theme => {
             maxWidth: '50%',
             '@media (max-width: 960px) ': {
                 flexWrap: 'wrap',
-                padding: '1em',
                 maxWidth: '100%',
             }
         },

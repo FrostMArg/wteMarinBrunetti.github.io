@@ -29,6 +29,8 @@ export const ItemCount = ({ producto, init, cantidadProducto, onAdd, click, clic
                     <IconButton onClick={e => restarItem()} disabled={count === init ? true : false}>
                         <RemoveCircleOutlineIcon />
                     </IconButton>
+                </div>
+                <div className={styles.inputGroup}>
                     <Button className={styles.buttons} startIcon={<AddShoppingCartIcon />} onClick={() => onAdd(count)} disabled={producto.stock === 0 ? true : false}>
                         Agregar al carrito
                     </Button>
