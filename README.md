@@ -3,12 +3,12 @@
 **Deploy**: https://frostmarg.github.io/wteMarinBrunetti.github.io/
 
 **Version Desktop**
-![Demonstration web](./src/images/WTSWeb.gif)
+![Demonstration web](./src/Images/WTSWeb.gif)
 
 
 
 **Version Mobile**
-![Demonstration mobile](./src/images/WTSMobile.gif)
+![Demonstration mobile](./src/Images/WTSMobile.gif)
 
 *Wizard Tech Store* es una tienda de hardware ficticia, su finalidad es recrear un sitio web ecommerce en react. 
 
